@@ -1,16 +1,19 @@
 #NUMBER GUESSING GAME
 
+#importing random module
+
 import random
-computer = random.randint(1,100)
+a = random.randint(1,51) # use randint to pick an integer between 1-50 
+guesses = 0 # To track the number of guesses
+while True: # while True because we don't know how many attempt we need to find that number chosen by the computer 
+    guesses +=1 
+    s = int(input("Guess the number : "))
+    if (s > a) :
+        print("lower the number please")
+    elif(s == a) :
+        print("you guess it right !")
+        break
+    else :
+        print("Higher the number please")
 
-while True :
-    youchoose = int(input("Enter the number between 1-100 : "))
-
-    if youchoose == computer :
-        print("This is fire ! you guess it right")
-    elif youchoose > 100 or youchoose < 1 :
-        print("you are entering an invalid input")
-    elif youchoose > computer :
-        print("your guess is wrong ---too high")
-    elif youchoose < computer :
-        print("your guess is wrong --- too low ")
+print(f" you guess the number {a} correctly in {guesses}")
